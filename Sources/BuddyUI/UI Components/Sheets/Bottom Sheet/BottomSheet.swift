@@ -105,3 +105,83 @@ struct BottomSheet<Content: View>: View {
         }
     }
 }
+
+
+
+// MARK: - Live Preview
+
+#Preview {
+    @Previewable @State var selectedIndex: Int = .zero
+    @Previewable @State var isBottomSheetPresented = false
+
+    let count = 10
+
+    VStack(spacing: .zero) {
+        HStack {
+            Text("Selected Index = \(selectedIndex)")
+
+            Spacer()
+
+            Button("Open Bottom Sheet") {
+                isBottomSheetPresented = true
+            }
+            .buttonStyle(.borderedProminent)
+        }
+        .padding()
+        .background(.yellow)
+
+        ScrollView(.vertical) {
+            LazyVStack(spacing: .zero) {
+                ForEach(.zero ..< 100, id: \.self) { index in
+                    Text("Item = \(index)")
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical)
+                        .background(.black.opacity(0.3))
+                        .clipShape(.rect(cornerRadius: 10))
+                        .padding(.vertical, 10)
+                        .padding(.horizontal)
+                }
+            }
+        }
+    }
+    .bottomSheet(isPresented: $isBottomSheetPresented) {
+        GeometryReader { geometry in
+            let size = geometry.size
+
+            VStack(spacing: .zero) {
+                Text("Title")
+                    .frame(maxWidth: .infinity)
+                    .overlay(alignment: .trailing) {
+                        Button {
+                            isBottomSheetPresented = false
+                        } label: {
+                            Image(systemName: "xmark")
+                        }
+                        .buttonStyle(.plain)
+                    }
+                    .foregroundStyle(.black.opacity(0.8))
+                    .padding()
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(.red, lineWidth: 1)
+                    }
+
+                List {
+                    ForEach(.zero ..< count, id: \.self) { index in
+                        Button {
+                            selectedIndex = index
+                            isBottomSheetPresented = false
+                        } label: {
+                            Text("Item = \(index)")
+                        }
+                    }
+                }
+                .frame(height: count > 6 ? (size.height / 2) : CGFloat(count) * 40 + 100)
+            }
+            .padding(.bottom, 30)
+            .background(.white)
+            .clipShape(.rect(cornerRadius: 20))
+            .frame(width: size.width, height: size.height, alignment: .bottom)
+        }
+    }
+}
