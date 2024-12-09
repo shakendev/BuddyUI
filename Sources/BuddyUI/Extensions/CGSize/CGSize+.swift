@@ -28,5 +28,10 @@ extension CGSize {
     ///
     ///
     ///
+    public static let half: Self = .init(width: 0.5, height: 0.5)
+
+    ///
+    ///
+    ///
     public static let zero: Self = .init(width: 0, height: 0)
 }
