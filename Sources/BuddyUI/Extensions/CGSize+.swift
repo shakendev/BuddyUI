@@ -22,10 +22,10 @@ extension CGSize {
     ///
     ///
     ///
-    static let identity: Self = .init(width: 1, height: 1)
+    public static let identity: Self = .init(width: 1, height: 1)
 
     ///
     ///
     ///
-    static let zero: Self = .init(width: 0, height: 0)
+    public static let zero: Self = .init(width: 0, height: 0)
 }
