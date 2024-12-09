@@ -128,13 +128,6 @@ extension AdaptivePopup {
         let size = geometry.size
 
         VStack(spacing: .zero) {
-            Button("Show Adaptive Popup") {
-                isAdaptivePopupPresented.toggle()
-            }
-            .buttonStyle(.borderedProminent)
-            .frame(maxWidth: .infinity, alignment: .trailing)
-            .padding()
-
             ScrollView(.vertical) {
                 LazyVStack(spacing: .zero) {
                     ForEach(.zero ..< 100, id: \.self) { index in
@@ -150,21 +143,24 @@ extension AdaptivePopup {
             }
         }
         .overlay(alignment: .bottomTrailing) {
-            Image(systemName: "questionmark.bubble.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 50, height: 50)
-                .padding()
-                .onTapGesture {
-                    isAdaptivePopupPresented = true
-                }
+            Button {
+                isAdaptivePopupPresented.toggle()
+            } label: {
+                Image(systemName: "questionmark.bubble.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 50, height: 50)
+                    .padding()
+            }
+            .buttonStyle(.plain)
+            .frame(maxWidth: .infinity, alignment: .trailing)
         }
         .adaptivePopup(
             isPresented: $isAdaptivePopupPresented,
             background: .blur(radius: 20),
             transition: .path(
                 from: .init(x: size.width / 1.2, y: size.height),
-                to: .init(x: size.width / 2, y: size.height / 1.5),
+                to: .init(x: size.width / 2, y: size.height / 2),
                 scale: .zero
             )
         ) {
