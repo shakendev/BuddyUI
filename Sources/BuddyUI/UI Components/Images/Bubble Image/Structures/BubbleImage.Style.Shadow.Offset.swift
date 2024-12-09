@@ -1,5 +1,5 @@
 //
-//  BubbleText.Style.Shadow.Offset.swift
+//  BubbleImage.Style.Shadow.Offset.swift
 //  BuddyUI
 //
 //  Created by Dimka Novikov on 09.12.2024.
@@ -13,9 +13,9 @@ import CoreGraphics
 
 
 
-// MARK: - BubbleText.Style.Shadow.Offset
+// MARK: - BubbleImage.Style.Shadow.Offset
 
-extension BubbleText.Style.Shadow {
+extension BubbleImage.Style.Shadow {
 
     // MARK: - Public structures
 

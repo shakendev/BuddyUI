@@ -24,7 +24,7 @@ extension BubbleText.Style {
     ///
     public struct Shadow {
 
-        // MARK: - Private properties
+        // MARK: - Public properties
         
         let color: Color
 

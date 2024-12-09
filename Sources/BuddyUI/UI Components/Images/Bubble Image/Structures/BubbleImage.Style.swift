@@ -1,5 +1,5 @@
 //
-//  BubbleText.Style.swift
+//  BubbleImage.Style.swift
 //  BuddyUI
 //
 //  Created by Dimka Novikov on 09.12.2024.
@@ -13,9 +13,9 @@ import SwiftUI
 
 
 
-// MARK: - BubbleText.Style
+// MARK: - BubbleImage.Style
 
-extension BubbleText {
+extension BubbleImage {
 
     // MARK: - Public structures
 
@@ -25,12 +25,10 @@ extension BubbleText {
     public struct Style {
 
         // MARK: - Public properties
-
+        
         let color: Color
 
         let radius: CGFloat
-
-        let font: UIFont
 
         let shadow0: Shadow
         let shadow1: Shadow
@@ -45,13 +43,11 @@ extension BubbleText {
         public init(
             color: Color = .primary,
             blur radius: CGFloat = .zero,
-            font: UIFont = .systemFont(ofSize: 15),
             shadow0: Shadow = .init(),
             shadow1: Shadow = .init()
         ) {
             self.color = color
             self.radius = radius
-            self.font = font
             self.shadow0 = shadow0
             self.shadow1 = shadow1
         }
