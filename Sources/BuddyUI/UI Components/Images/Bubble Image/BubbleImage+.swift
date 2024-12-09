@@ -15,6 +15,7 @@ import SwiftUI
 
 // MARK: - EnvironmentValues+
 
+@available(iOS 18.0, *)
 extension EnvironmentValues {
 
     // MARK: - Public properties
@@ -26,6 +27,7 @@ extension EnvironmentValues {
 
 // MARK: - View+
 
+@available(iOS 18.0, *)
 extension View {
 
     // MARK: - Public methods

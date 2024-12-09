@@ -15,6 +15,7 @@ import CoreGraphics
 
 // MARK: - CGSize+
 
+@available(iOS 18.0, *)
 extension CGSize {
 
     // MARK: - Public properties
