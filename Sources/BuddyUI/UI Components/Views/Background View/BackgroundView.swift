@@ -1,8 +1,8 @@
 //
 //  BackgroundView.swift
-//  Swift Buddy
+//  BuddyUI
 //
-//  Created by Dimka Novikov on 29.11.2024.
+//  Created by Dimka Novikov on 09.12.2024.
 //  Copyright © 2024 DDEC. All rights reserved.
 //
 
