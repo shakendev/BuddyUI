@@ -2,6 +2,15 @@
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 
+//
+//  Package.swift
+//  BuddyUI
+//
+//  Created by Dimka Novikov on 09.12.2024.
+//  Copyright © 2024 DDEC. All rights reserved.
+//
+
+
 // MARK: Import section
 
 import PackageDescription
