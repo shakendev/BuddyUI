@@ -17,7 +17,7 @@ import SwiftUI
 
 @available(iOS 18.0, *)
 extension View {
-    public func bottomSheet2<Content: View>(
+    public func bottomSheet<Content: View>(
         isPresented: Binding<Bool>,
         @ViewBuilder content: () -> Content
     ) -> some View {
