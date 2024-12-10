@@ -40,7 +40,8 @@ struct BottomSheet<Content: View>: View {
     var body: some View {
         Color.black.opacity(0.6)
             .opacity(isShowed ? 1 : .zero)
-            .onTapGesture { hide() }
+        // FIXME: This event causes removing key window
+//            .onTapGesture { hide() }
             .overlay(alignment: .bottom) {
                 if isShowed {
                     content

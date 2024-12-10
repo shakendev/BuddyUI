@@ -53,7 +53,8 @@ public struct AdaptivePopup<Content: View>: View {
                     .opacity(isShowed ? 1 : .zero)
             }
         }
-        .onTapGesture { hide() }
+        // FIXME: This event causes removing key window
+//        .onTapGesture { hide() }
         .overlay {
             switch transition {
             case .center(let scaleFactor):
