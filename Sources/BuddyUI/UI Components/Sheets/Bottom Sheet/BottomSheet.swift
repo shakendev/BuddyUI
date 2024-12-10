@@ -46,17 +46,18 @@ struct BottomSheet<Content: View>: View {
                 if isShowed {
                     content
                         .offset(y: yOffset)
-                        .gesture(
-                            DragGesture()
-                                .onChanged { gesture in
-                                    if gesture.startLocation.y < gesture.location.y {
-                                        yOffset = gesture.translation.height
-                                    }
-                                }
-                                .onEnded { gesture in
-                                    if gesture.translation.height > 100 { hide() }
-                                }
-                        )
+                    // FIXME: This event causes removing key window
+//                        .gesture(
+//                            DragGesture()
+//                                .onChanged { gesture in
+//                                    if gesture.startLocation.y < gesture.location.y {
+//                                        yOffset = gesture.translation.height
+//                                    }
+//                                }
+//                                .onEnded { gesture in
+//                                    if gesture.translation.height > 100 { hide() }
+//                                }
+//                        )
                         .transition(
                             .asymmetric(
                                 insertion: .move(edge: .bottom),
